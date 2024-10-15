@@ -1,0 +1,17 @@
+.wallMainContainer {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftRightWall {
+  height: 30px;
+  width: 30px;
+}
+
+.topDownWall {
+  width: 30px;
+  height: 30px;
+}

@@ -1,0 +1,24 @@
+.mazeMainContainer {
+  display: flex;
+  background-color: #0b1925;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 80%;
+  height: 450px;
+  min-width: 480px;
+}
+
+.mazeHeight {
+  display: flex;
+  flex-direction: column;
+}
+
+.mazeWidth {
+  display: flex;
+  flex-direction: row;
+}
+
+.testing {
+  color: white;
+}

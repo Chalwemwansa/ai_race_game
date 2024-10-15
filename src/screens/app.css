@@ -1,0 +1,41 @@
+.appMainContainer {
+  background-color: #04111d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mainHeader {
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.maizeFlag {
+  width: 60px;
+  height: 80px;
+  margin-bottom: 40px;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  width: 80%;
+  min-width: 480px;
+  margin-bottom: 10px;
+  justify-content: space-around;
+}
+
+.button {
+  background-color: #0b1925;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: #585f79;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+}

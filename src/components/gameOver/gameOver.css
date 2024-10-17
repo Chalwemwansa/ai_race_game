@@ -1,0 +1,24 @@
+.gameoverMainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.textDeco {
+  color: white;
+  font-weight: bold;
+}
+
+.otherText {
+  color: white;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.otherTex {
+  margin-top: 30%;
+  color: white;
+  font-weight: bolder;
+  font-size: x-large;
+}

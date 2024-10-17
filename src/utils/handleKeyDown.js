@@ -1,5 +1,3 @@
-import handleAgent from "./handleAgent";
-
 const handleKey = (event, position, setPosition, mazeLevel) => {
   const walls = [2, 3, 1];
   function handleUp() {

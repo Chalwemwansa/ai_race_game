@@ -2,15 +2,17 @@
 import AgentPlayer from "./agentplayer/AgentPlayer";
 import Wall from "./wall/Wall";
 
-export default function RenderBox({ boxValue }) {
+export default function RenderBox({ boxValue, wall }) {
   // 2 is topDown wall
   // 3 is left right wall
   if (boxValue === 3) {
-    return <Wall leftRight={true} />;
+    if (wall === "light") return <Wall light={true} />;
+    return <Wall dark={true} />;
   }
 
   if (boxValue === 2) {
-    return <Wall topDown={true} />;
+    if (wall === "light") return <Wall light={true} />;
+    return <Wall dark={true} />;
   }
 
   if (boxValue === 0) {

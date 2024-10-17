@@ -7,7 +7,7 @@ export default function cell(
   rowIndex,
   playerPosition,
   agentPosition,
-  position
+  goalPosition
 ) {
   if (
     rowIndex === playerPosition.x &&
@@ -23,7 +23,7 @@ export default function cell(
   if (rowIndex === playerPosition.x && columnIndex === playerPosition.y) {
     return 6;
   }
-  if (rowIndex === position.goal.x && columnIndex === position.goal.y) {
+  if (rowIndex === goalPosition.x && columnIndex === goalPosition.y) {
     return 5;
   }
   return boxValue;

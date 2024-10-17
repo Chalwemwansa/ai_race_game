@@ -4,20 +4,17 @@ import "./wall.css";
  * @prop {boolean showing whether to render a left or right wall} leftRight
  * @prop {boolean showing whether to render a bottom or top wall} topDown
  */
-export default function Wall({ topDown, leftRight }) {
+export default function Wall({ light, dark }) {
   return (
     <div className="wallMainContainer">
-      {leftRight && (
+      {dark && (
         <img
-          src={require("../../assests/leftRight.png")}
+          src={require("../../assests/wall.png")}
           className="leftRightWall"
         />
       )}
-      {topDown && (
-        <img
-          src={require("../../assests/topDownWall.png")}
-          className="topDownWall"
-        />
+      {light && (
+        <img src={require("../../assests/wall2.png")} className="topDownWall" />
       )}
     </div>
   );

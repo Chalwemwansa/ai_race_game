@@ -2,9 +2,9 @@
 
 const startEndLocations = {
   easy: [
-    { start: { x: 1, y: 1 }, goal: { x: 5, y: 5 } },
-    { start: { x: 1, y: 5 }, goal: { x: 3, y: 3 } },
-    { start: { x: 5, y: 1 }, goal: { x: 1, y: 3 } },
+    { start: { x: 1, y: 1 }, goal: { x: 4, y: 13 } },
+    { start: { x: 1, y: 1 }, goal: { x: 9, y: 8 } },
+    { start: { x: 1, y: 1 }, goal: { x: 9, y: 13 } },
   ],
   medium: [
     { start: { x: 1, y: 1 }, goal: { x: 8, y: 8 } },
@@ -12,9 +12,9 @@ const startEndLocations = {
     { start: { x: 5, y: 1 }, goal: { x: 1, y: 3 } },
   ],
   hard: [
-    { start: { x: 1, y: 1 }, goal: { x: 6, y: 13 } },
-    { start: { x: 5, y: 1 }, goal: { x: 3, y: 8 } },
-    { start: { x: 8, y: 5 }, goal: { x: 1, y: 2 } },
+    { start: { x: 1, y: 1 }, goal: { x: 9, y: 19 } },
+    { start: { x: 1, y: 1 }, goal: { x: 9, y: 8 } },
+    { start: { x: 1, y: 1 }, goal: { x: 9, y: 13 } },
   ],
 };
 

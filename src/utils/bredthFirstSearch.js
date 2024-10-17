@@ -1,53 +1,54 @@
 /**
  *
- * @param {the initial state of the agent or the start position} start
- * @param {the goal state of the agent or the final state} goal
- * @returns the shortest path to reach the goal state or null if path is not found
+ * @param {Object} start - the initial state of the agent or the start position
+ * @param {Object} goal - the goal state of the agent or the final state
+ * @param {Array} maze - the maze representation (2D array)
+ * @returns {Array|null} - the shortest path to reach the goal state or null if path is not found
  */
-export default function bredthFirstSearch(start, goal, maze) {
-  // movements corresponding to up, down, right and left
+export default function breadthFirstSearch(start, goal, maze) {
+  // Updated movements corresponding to up, down, left, and right
   const directions = [
-    { dx: 0, dy: -1, move: "up" },
-    { dx: 0, dy: 1, move: "down" },
-    { dx: -1, dy: 0, move: "left" },
-    { dx: 1, dy: 0, move: "right" },
+    { dx: -1, dy: 0, move: "up" }, // Move up (decrease y)
+    { dx: 1, dy: 0, move: "down" }, // Move down (increase y)
+    { dx: 0, dy: -1, move: "left" }, // Move left (decrease x)
+    { dx: 0, dy: 1, move: "right" }, // Move right (increase x)
   ];
 
-  let queue = [{ ...start, path: [] }]; // queue used to store the paths that the algorithm is exploring
+  let queue = [{ ...start, path: [] }]; // Queue to store the paths being explored
   let visited = Array.from({ length: maze.length }, () =>
     Array(maze[0].length).fill(false)
   );
-  visited[start.y][start.x] = true;
+
+  visited[start.x][start.y] = true; // Mark the starting position as visited
 
   while (queue.length > 0) {
-    let { x, y, path } = queue.shift(); // remove the first element from the queue and return it
+    let { x, y, path } = queue.shift(); // Remove the first element from the queue
 
-    if (x === goal.y && y === goal.x) {
-      return path;
+    // Check if the current position is the goal
+    if (y === goal.y && x === goal.x) {
+      // Switch goal condition
+      return path; // Return the path when the goal is reached
     }
 
-    /**
-     * loop throught the different directions and validate the movements from the given node being expanded,
-     * if a movement is valid it is added to the queue for expanding later on
-     * the move is appended to the path that is already there in the queue
-     */
+    // Loop through the different directions and validate the movements
     for (let { dx, dy, move } of directions) {
-      let newX = x + dx;
-      let newY = y + dy;
+      let newX = x + dx; // Calculate new x position
+      let newY = y + dy; // Calculate new y position
 
+      // Validate the new position
       if (
         newX >= 0 &&
-        newX < maze[0].length &&
+        newX < maze.length && // Adjusted to check maze length
         newY >= 0 &&
-        newY < maze.length &&
-        maze[newY][newX] === 0 &&
-        !visited[newY][newX]
+        newY < maze[0].length && // Adjusted to check maze width
+        maze[newX][newY] === 0 && // Check for free space
+        !visited[newX][newY] // Check if it has been visited
       ) {
-        visited[newY][newX] = true;
-        queue.push({ x: newX, y: newY, path: [...path, move] });
+        visited[newX][newY] = true; // Mark as visited
+        queue.push({ x: newX, y: newY, path: [...path, move] }); // Enqueue the new position with the updated path
       }
     }
   }
 
-  return null;
+  return null; // Return null if no path is found
 }

@@ -4,6 +4,8 @@ import Maze from "../components/maze/Maze";
 import startEndLocations from "../utils/startEndLocations";
 import mazes from "../utils/mazes";
 import bredthFirstSearch from "../utils/bredthFirstSearch";
+import { useState } from "react";
+import Help from "../components/help/Help";
 
 function App() {
   const [level, setLevel] = useState(mazes.easy);
@@ -27,6 +29,7 @@ function App() {
     startEndLocations.easy[start].goal
   );
   const [index, setIndex] = useState(0);
+  const [help, setHelp] = useState(false);
 
   const resetPositions = (easy, start) => {
     if (easy) {
@@ -63,9 +66,9 @@ function App() {
         <button
           className="button"
           onClick={() => {
-            resetPositions(easy, (start + 1) % 3);
+            resetPositions(easy, (start + 1) % 4);
             setWon(false);
-            setstart((start + 1) % 3);
+            setstart((start + 1) % 4);
           }}
         >
           Start
@@ -95,8 +98,11 @@ function App() {
         >
           Difficulty
         </button>
+        <button onClick={() => setHelp(true)} className="button">
+          Help
+        </button>
       </div>
-      {
+      {!help && (
         <Maze
           level={easy ? mazes.easy : mazes.hard}
           goalPosition={goalPosition}
@@ -111,7 +117,8 @@ function App() {
           index={index}
           setIndex={setIndex}
         />
-      }
+      )}
+      {help && <Help setHelp={setHelp} />}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 # the Maze race
 
-the maze race is a simple game that has an automated player that always chooses the shortest path
+the maze race is a simple game that you play using the up, down, left and right buttons on a keyboard and has an automated player that always chooses the shortest path
 the automated player(AI agent) makes a move whenever the human player makes a move
 the game ends when either the agent or human or both reach the flag which is the finish position
 
